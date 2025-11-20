@@ -36,4 +36,13 @@ public class UserController {
         }
     }
 
+    @GetMapping("/{userId}/validate")
+    public ResponseEntity<Boolean> validateUser(@PathVariable String userId) {
+        try {
+            return ResponseEntity.ok(userService.existByUserId(userId));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).build();
+        }
+    }
 }
