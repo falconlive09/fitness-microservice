@@ -2,7 +2,7 @@ package com.fitness.activityservice.controller;
 
 import com.fitness.activityservice.dto.ActivityRequest;
 import com.fitness.activityservice.dto.ActivityResponse;
-import com.fitness.activityservice.service.ActivityServive;
+import com.fitness.activityservice.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ActivityController {
 
     @Autowired
-    private ActivityServive activityService;
+    private ActivityService activityService;
 
     @PostMapping
     public ResponseEntity<ActivityResponse> trackActivity (@RequestBody ActivityRequest request) {
